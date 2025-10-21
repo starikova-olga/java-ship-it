@@ -4,8 +4,10 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class ParcelBox<T extends Parcel> {
+
     private List<T> parcels = new ArrayList<>();
     private int maxWeight;
+
 
     public ParcelBox(int maxWeight) {
         this.maxWeight = maxWeight;

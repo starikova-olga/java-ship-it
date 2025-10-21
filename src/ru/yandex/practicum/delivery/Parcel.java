@@ -4,14 +4,11 @@ import java.util.ArrayList;
 import java.util.List;
 
 abstract class Parcel {
-    private String description;
-    private int weight;
-    private String deliveryAddress;
-    private int sendDay;
-    protected static final int STANDART_COST = 2;
-    protected static final int FRAGILE_COST = 4;
-    protected static final int PERISHABLE_COST = 3;
-    private static List<Parcel> allParcels = new ArrayList<>();
+    protected String description;
+    protected int weight;
+    protected String deliveryAddress;
+    protected int sendDay;
+
 
     public Parcel(String description, int weight, String deliveryAddress, int sendDay) {
         this.description = description;
@@ -70,12 +67,6 @@ abstract class Parcel {
     }
     public abstract double calculateDeliveryCost();
 
-    private static void calculateCosts() {
-        double totalCost = 0;
-        for (Parcel parcel : allParcels) {
-            totalCost += parcel.calculateDeliveryCost();
-        }
-        System.out.println("Общая стоимость доставки всех посылок: " + totalCost);
-    }
+
     //добавьте реализацию и другие необходимые классы
 }
